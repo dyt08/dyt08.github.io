@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,KACE,SAAU,CACV,QAAS,CACT,sCAA0C,CAC1C,cAAe,CACf,aAAc,CACd,eACF","file":"main.a62bd24c.chunk.css","sourcesContent":["body {\n  padding: 0;\n  margin: 0;\n  font-family: 'Shadows Into Light', cursive;\n  font-size: 30px;\n  color: #212121;\n  line-height: 1.4;\n}\n"]}
