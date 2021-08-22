@@ -28,7 +28,7 @@
       <div id="myToast" aria-atomic="true" aria-live="assertive" class="toast position-absolute end-0 top-0 m-3" role="alert"> 
         <div class="d-flex">
           <div class="toast-body">
-            Thank you for visiting my personal website. This website is still under development.
+            Thank you for visiting my personal website. This website is still under development, I will do my best to develop this website so that the information provided is as expected.
           </div>
         </div>
       </div>
