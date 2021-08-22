@@ -4,8 +4,47 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-(function() {
+(function () {
   "use strict";
+
+  /**
+   * Age
+   */
+  let birthYear = 1997;
+  function ageCalculator() {
+    let today = new Date();
+    let age = today.getFullYear() - birthYear;
+    return age;
+  }
+  document.getElementById("age").innerHTML = ageCalculator();
+  document.getElementById("birthYear").innerHTML = birthYear;
+
+  /**
+   * Toast
+   */
+  const { Toast } = bootstrap;
+
+  const htmlMarkup = `
+      <div id="myToast" aria-atomic="true" aria-live="assertive" class="toast position-absolute end-0 top-0 m-3" role="alert"> 
+        <div class="d-flex">
+          <div class="toast-body">
+            Thank you for visiting my personal website. This website is still under development.
+          </div>
+        </div>
+      </div>
+    `;
+
+  function toast() {
+    const template = document.createElement('template')
+    const html = htmlMarkup.trim()
+    template.innerHTML = html
+    return template.content.firstChild
+  }
+
+  const toastEl = toast();
+  document.body.appendChild(toastEl)
+  const myToast = new Toast(toastEl);
+  myToast.show();
 
   /**
    * Easy selector helper function
@@ -90,7 +129,7 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
+  on('click', '.mobile-nav-toggle', function (e) {
     select('body').classList.toggle('mobile-nav-active')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
@@ -99,7 +138,7 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '.scrollto', function(e) {
+  on('click', '.scrollto', function (e) {
     if (select(this.hash)) {
       e.preventDefault()
 
@@ -159,7 +198,7 @@
     new Waypoint({
       element: skilsContent,
       offset: '80%',
-      handler: function(direction) {
+      handler: function (direction) {
         let progress = select('.progress .progress-bar', true);
         progress.forEach((el) => {
           el.style.width = el.getAttribute('aria-valuenow') + '%'
@@ -180,9 +219,9 @@
 
       let portfolioFilters = select('#portfolio-flters li', true);
 
-      on('click', '#portfolio-flters li', function(e) {
+      on('click', '#portfolio-flters li', function (e) {
         e.preventDefault();
-        portfolioFilters.forEach(function(el) {
+        portfolioFilters.forEach(function (el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
@@ -190,7 +229,7 @@
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
-        portfolioIsotope.on('arrangeComplete', function() {
+        portfolioIsotope.on('arrangeComplete', function () {
           AOS.refresh()
         });
       }, true);
