@@ -25,13 +25,11 @@
   const { Toast } = bootstrap;
 
   const htmlMarkup = `
-      <div id="myToast" aria-atomic="true" aria-live="assertive" class="toast position-absolute end-0 top-0 m-3" role="alert"> 
-        <div class="d-flex">
-          <div class="toast-body">
-            Thank you for visiting my personal website. This website is still under development, I will do my best to develop this website so that the information provided is as expected.
-          </div>
+      <button id="toast" aria-atomic="true" aria-live="assertive" class="toast position-fixed top-0 start-50 translate-middle-x m-2" role="alert" data-bs-delay="9000">  
+        <div class="toast-body">
+          Thank you for visiting my personal website. This website is still under development, I will do my best to develop this website so that the information provided is as expected.
         </div>
-      </div>
+      </button>
     `;
 
   function toast() {
@@ -45,6 +43,10 @@
   document.body.appendChild(toastEl)
   const myToast = new Toast(toastEl);
   myToast.show();
+
+  document.getElementById("toast").addEventListener("click", function () {
+    myToast.hide();
+  });
 
   /**
    * Easy selector helper function

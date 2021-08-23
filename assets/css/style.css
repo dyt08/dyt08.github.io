@@ -13,13 +13,15 @@
 }
 
 .toast{
+  width: 616px !important;
   opacity: .85 !important;
-  position: fixed !important;
   border-radius: 1.25rem !important;
 }
 
-.toast-body {
-  padding: .85rem !important;
+@media (max-width: 616px) {
+  .toast {
+    margin: auto !important;
+  }
 }
 
 /*--------------------------------------------------------------
